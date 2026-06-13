@@ -1,0 +1,195 @@
+/* 1. サイト全体の見た目を整える */
+body {
+    background-color: #f5f7fa;
+    color: #333333;
+    font-family: sans-serif;
+    line-height: 1.6;
+
+    /* 👇 全体を中央に寄せる魔法のセット */
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 40px;
+}
+
+/* 2. 画像のデザイン */
+img {
+    border-radius: 12px;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
+    margin-bottom: 24px;
+}
+
+/* 3. トグル（折りたたみ）のデザイン */
+details {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    padding: 16px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 24px;
+}
+
+summary {
+    cursor: pointer;           /* マウスを乗せたときに指のマークにする */
+    font-weight: bold;         /* 文字を太字に */
+    color: #0076df;            /* 趣味サイトのアクセントカラー（例として青） */
+}
+
+/* 4. 子ページへのリンクボタン */
+nav a {
+    display: inline-block;
+    background-color: #0076df; /* ボタンの背景色 */
+    color: white;              /* 文字を白に */
+    text-decoration: none;     /* 下線を消す */
+    padding: 10px 20px;
+    border-radius: 20px;       /* カプセル型のボタンにする */
+    transition: 0.3s;          /* ふんわり変化させる */
+}
+
+/* マウスを乗せたとき（ホバー）の動き */
+nav a:hover {
+    background-color: #0056a3; /* 少し濃い青にして、押せることを伝える */
+    transform: translateY(-2px); /* ほんの少し上に浮かす */
+}
+
+
+
+
+/* --- 追加するCSS --- */
+
+/* ヘッダー全体のデザイン */
+header {
+    width: 100%;
+    max-width: 1200px;         /* 横に広がりすぎない限界を設定 */
+    display: flex;             /* 💡 中身（ロゴとナビ）を横並びにする */
+    justify-content: space-between; /* 💡 両端に分けて配置する */
+    align-items: center;       /* 上下の中央に揃える */
+    padding: 20px;
+    border-bottom: 1px solid #e0e0e0; /* 下にうっすら線を入れる */
+    margin-bottom: 40px;
+}
+
+.header-logo {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* ヘッダー内のナビゲーションリンク */
+.header-nav a {
+    margin-left: 20px;         /* リンク同士の間に隙間を作る */
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+}
+.header-nav a:hover {
+    color: #b9c1c7;            /* マウスを乗せたら色が変わる */
+}
+
+/* メインコンテンツを囲む枠 */
+main {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 💡 画像とテキストを横並びにする設定 */
+.profile-container {
+    display: flex;             /* 💡 画像とテキストの親にflexを指定 */
+    align-items: center;       /* 上下の中心を揃える */
+    gap: 30px;                 /* 画像とテキストの間の隙間を30pxあける */
+    margin-bottom: 40px;
+    background-color: #ffffff; /* 白いカードのような背景にする */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.profile-text {
+    flex: 1;                   /* 利用可能なスペースをいっぱいに使う */
+    text-align: left;          /* テキストは左詰めに */
+}
+
+/* 前回の nav a（ボタン）がヘッダーのリンクと競合しないように調整 */
+/* 前回の「nav a」という記述を「.header-nav a」等とは別で残してある場合、適宜好みのデザインに調整してください */
+
+
+
+
+
+
+
+/* --- グリッドレイアウトの設定 --- */
+.gallery-section {
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.gallery-section h2 {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+/* 💡 グリッドの親箱 */
+.grid-container {
+    display: grid;                      /* 💡 グリッドレイアウトを開始 */
+    grid-template-columns: repeat(3, 1fr); /* 💡 同じ幅(1fr)の列を「3列」作成 */
+    gap: 20px;                          /* カード同士の隙間を20pxに */
+}
+
+/* カード単体のデザイン */
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;                   /* はみ出た中身を隠す */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.card-img-placeholder {
+    background-color: #e0e6ed;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-weight: bold;
+}
+
+.card-content {
+    padding: 16px;
+}
+
+.card-content h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.1rem;
+}
+
+.card-content p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* --- 📱 スマートフォン用の設定（画面幅が768px以下の場合） --- */
+@media (max-width: 768px) {
+    
+    /* 1. 前回の横並びプロフィールを「縦並び」に変える */
+    .profile-container {
+        flex-direction: column;         /* 💡 上下（縦）に並べる */
+        text-align: center;
+    }
+    
+    .profile-text {
+        text-align: center;             /* スマホではテキストも中央寄せ */
+    }
+
+    /* 2. 今回の3列グリッドを「1列」に変える */
+    .grid-container {
+        grid-template-columns: 1fr;     /* 💡 1列に変更 */
+    }
+}
